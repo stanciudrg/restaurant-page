@@ -57,6 +57,7 @@ export default function init() {
     linkedin.innerHTML = linkedinSVG;
     links.appendChild(linkedin);
 
+    footer.appendChild(paragraph);
     footer.appendChild(links);
 
     content.appendChild(header);
