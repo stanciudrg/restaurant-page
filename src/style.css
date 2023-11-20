@@ -1,0 +1,123 @@
+* {
+    --font-color: #303030;
+    --background-color: #d6d6be;
+    --primary-color: #99d055;
+}
+
+#content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--font-color);
+}
+
+h2 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--background-color);
+}
+
+button {
+    appearance: none;
+    cursor: pointer;
+}
+
+button,
+li a,
+footer a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: var(--font-color);
+    border: 0;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
+    transition: 0.2s transform;
+}
+
+button:hover,
+li a:hover,
+footer a:hover {
+    transform: translateY(-3px);
+}
+
+header ul {
+    display: flex;
+    padding: 0;
+    gap: 4px;
+}
+
+header li {
+    list-style-type: none;
+    display: flex;
+}
+
+header a {
+    text-transform: capitalize;
+    padding: 1rem 1.5rem;
+}
+
+header li:first-of-type a {
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    padding-left: 30px;
+}
+
+header li:last-of-type a {
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    padding-right: 30px;
+}
+
+.home {
+    background: linear-gradient(to left, #d6d6be, #b8b8a3);
+}
+
+.home.selected {
+    background: linear-gradient(to left, #99d055, #7BB342);
+}
+
+.contact {
+    background-color: var(--background-color);
+}
+
+.contact.selected {
+    background-color: #99d055;
+}
+
+.menu {
+    background: linear-gradient(to right, #d6d6be, #b8b8a3);
+}
+
+.menu.selected {
+    background: linear-gradient(to right, #99d055, #7BB342);
+}
+
+footer {
+    padding: 0 1rem 1rem 1rem;
+}
+
+footer p {
+    color: var(--background-color);
+    margin: 0 0 1rem 0;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.links a {
+    fill: var(--background-color);
+}
+
+.links a:hover,
+.links a:focus {
+    fill: var(--primary-color);
+}
+
+.links svg {
+    width: 30px;
+    height: 30px;
+}
