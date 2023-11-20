@@ -4,7 +4,12 @@ export default function loadHomePage() {
 
     // Main
 
+    document.querySelector('.home').classList.add('selected');
+    document.querySelector('.contact').classList.remove('selected');
+    document.querySelector('.menu').classList.remove('selected');
+
     const main = document.querySelector('main');
+    main.innerHTML = '';
 
     const homeContainer = document.createElement('div');
     homeContainer.classList.add('home-container');
