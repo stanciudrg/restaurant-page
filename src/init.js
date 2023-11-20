@@ -1,6 +1,6 @@
-import githubSVG from './logo-github.svg';
-import codepenSVG from './logo-codepen.svg';
-import linkedinSVG from './logo-linkedin.svg';
+import githubSVG from './inline-svg/logo-github.svg';
+import codepenSVG from './inline-svg/logo-codepen.svg';
+import linkedinSVG from './inline-svg/logo-linkedin.svg';
 
 export default function init() {
 
@@ -34,6 +34,8 @@ export default function init() {
     header.appendChild(nav);
     content.appendChild(header);
 
+    const main = document.createElement('main');
+
     const footer = document.createElement('footer');
 
     const paragraph = document.createElement('p');
@@ -61,6 +63,7 @@ export default function init() {
     footer.appendChild(links);
 
     content.appendChild(header);
+    content.appendChild(main);
     content.appendChild(footer);
 
 }

@@ -18,12 +18,18 @@ module.exports = {
                 use: [MiniCssExtractPlugin.loader, 'css-loader'],
             },
             {
-                test: /\.(png|jpg|jpeg|gif)$/i,
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
+                exclude: [
+                    path.resolve(__dirname, 'src/inline-svg'),
+                ]
             },
             {
                 test: /\.svg$/i,
-                loader: 'svg-inline-loader'
+                loader: 'svg-inline-loader',
+                exclude: [
+                    path.resolve(__dirname, 'src/hero.svg'),
+                ],
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
