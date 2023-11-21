@@ -41,8 +41,6 @@ export default function loadMenuPage() {
         png.setAttribute('height', '175');
         png.setAttribute('width', '175');
 
-        li.appendChild(png);
-
         const itemInfo = document.createElement('div');
         itemInfo.classList.add('item-info');
 
@@ -58,10 +56,53 @@ export default function loadMenuPage() {
         itemPrice.classList.add('item-price');
         itemPrice.textContent = `\$${price}`;
 
+        switch (name) {
+
+            case 'vegetarian':
+
+                png.setAttribute('alt', 'Vegetarian Salad');
+                break;
+
+            case 'avocado':
+
+                png.setAttribute('alt', 'Avocado Salad');
+                break;
+
+            case 'caesar':
+
+                png.setAttribute('alt', 'Caesar Salad');
+                break;
+
+            case 'beef-rice':
+
+                png.setAttribute('alt', 'Beef and Rice Salad');
+                break;
+
+            case 'chicken':
+
+                png.setAttribute('alt', 'Chicken Salad');
+                itemPrice.textContent = '';
+
+                const oldPrice = document.createElement('span');
+                oldPrice.textContent = '$8.99';
+
+                const newPrice = document.createElement('span');
+                newPrice.textContent = `\$${price}`;
+                itemPrice.appendChild(oldPrice);
+                itemPrice.appendChild(newPrice);
+                break;
+
+            case 'tuna':
+
+                png.setAttribute('alt', 'Tuna Salad');
+
+        }
+
         itemInfo.appendChild(itemName);
         itemInfo.appendChild(itemCalories);
         itemInfo.appendChild(itemPrice);
 
+        li.appendChild(png);
         li.appendChild(itemInfo);
         ul.appendChild(li);
 
