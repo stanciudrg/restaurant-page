@@ -476,3 +476,11 @@ footer p {
     }
 
 }
+
+@media (max-width: 450px) {
+
+    .contact-us {
+        width: 100%;
+    }
+
+}
