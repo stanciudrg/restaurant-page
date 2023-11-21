@@ -2,8 +2,6 @@ import heroSVG from '../img/hero.svg';
 
 export default function loadHomePage() {
 
-    // Main
-
     document.querySelector('.home').classList.add('selected');
     document.querySelector('.contact').classList.remove('selected');
     document.querySelector('.menu').classList.remove('selected');

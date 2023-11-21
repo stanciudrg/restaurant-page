@@ -47,10 +47,10 @@ h2 {
 button {
     appearance: none;
     cursor: pointer;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
 }
 
 button,
-li a,
 footer a {
     text-decoration: none;
     font-size: 1.1rem;
@@ -59,15 +59,9 @@ footer a {
     transition: 0.2s transform;
 }
 
-button,
-li a {
-    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
-}
-
 @media (hover: hover) {
 
     button:hover,
-    li a:hover,
     footer a:hover {
         transform: translateY(-3px);
     }
@@ -85,18 +79,18 @@ header li {
     display: flex;
 }
 
-header a {
+header button {
     text-transform: capitalize;
     padding: 1rem 1.5rem;
 }
 
-header li:first-of-type a {
+header li:first-of-type button {
     border-top-left-radius: 100px;
     border-bottom-left-radius: 100px;
     padding-left: 30px;
 }
 
-header li:last-of-type a {
+header li:last-of-type button {
     border-top-right-radius: 100px;
     border-bottom-right-radius: 100px;
     padding-right: 30px;
@@ -263,7 +257,7 @@ textarea:focus {
     outline-color: var(--primary-color);
 }
 
-button {
+fieldset button {
     width: calc(100% + 4px);
     background: linear-gradient(to right, #99d055, #7BB342);
     border-bottom-left-radius: 30px;

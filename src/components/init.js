@@ -15,14 +15,13 @@ export default function init() {
     function liCreator(name) {
 
         const li = document.createElement('li');;
-        const a = document.createElement('a');
-        a.classList.add(name);
-        a.setAttribute('href', '#');
-        a.textContent = name;
-        li.appendChild(a);
+        const button = document.createElement('button');
+        button.classList.add(name);
+        button.textContent = name;
+        li.appendChild(button);
         ul.appendChild(li);
 
-        if (name == 'home') { a.classList.add('selected') }
+        if (name == 'home') { button.classList.add('selected') }
 
     }
 
