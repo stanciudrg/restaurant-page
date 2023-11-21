@@ -103,6 +103,7 @@ export default function loadContactPage() {
 
     const button = document.createElement('button');
     button.textContent = 'Send';
+    button.addEventListener('click', (e) => e.preventDefault());
 
     fieldset.appendChild(emailLabel);
     fieldset.appendChild(input);
