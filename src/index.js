@@ -1,9 +1,9 @@
-import init from './init.js';
-import loadHomePage from './home.js';
-import './normalize.css';
-import './style.css';
-import loadContactPage from './contact.js';
-import loadMenuPage from './menu.js';
+import init from './components/init.js';
+import loadHomePage from './components/home.js';
+import './styles/normalize.css';
+import './styles/style.css';
+import loadContactPage from './components/contact.js';
+import loadMenuPage from './components/menu.js';
 
 init();
 loadHomePage();

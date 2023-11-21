@@ -1,9 +1,9 @@
-import vegetarianPNG from './menu-img/vegetarian.png';
-import avocadoPNG from './menu-img/avocado.png';
-import caesarPNG from './menu-img/caesar.png';
-import beefRicePNG from './menu-img/beef-rice.png';
-import chickenPNG from './menu-img/chicken.png';
-import tunaPNG from './menu-img/tuna.png';
+import vegetarianPNG from '../img/vegetarian.png';
+import avocadoPNG from '../img/avocado.png';
+import caesarPNG from '../img/caesar.png';
+import beefRicePNG from '../img/beef-rice.png';
+import chickenPNG from '../img/chicken.png';
+import tunaPNG from '../img/tuna.png';
 
 export default function loadMenuPage() {
 

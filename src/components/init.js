@@ -1,6 +1,6 @@
-import githubSVG from './inline-svg/logo-github.svg';
-import codepenSVG from './inline-svg/logo-codepen.svg';
-import linkedinSVG from './inline-svg/logo-linkedin.svg';
+import githubSVG from '..//inline-svg/logo-github.svg';
+import codepenSVG from '..//inline-svg/logo-codepen.svg';
+import linkedinSVG from '..//inline-svg/logo-linkedin.svg';
 
 export default function init() {
 

@@ -1,4 +1,4 @@
-import heroSVG from './hero.svg';
+import heroSVG from '../img/hero.svg';
 
 export default function loadHomePage() {
 

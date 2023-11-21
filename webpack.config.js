@@ -9,7 +9,7 @@ module.exports = {
     mode: 'production',
     entry: './src/index.js',
     output: {
-        filename: 'main.js',
+        filename: '[contenthash].js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
     },
@@ -24,18 +24,24 @@ module.exports = {
                 type: 'asset/resource',
                 exclude: [
                     path.resolve(__dirname, 'src/inline-svg'),
-                ]
+                ],
+                generator: {
+                    filename: 'img/[contenthash][ext]',
+                },
             },
             {
                 test: /\.svg$/i,
                 loader: 'svg-inline-loader',
                 exclude: [
-                    path.resolve(__dirname, 'src/hero.svg'),
+                    path.resolve(__dirname, 'src/img/hero.svg'),
                 ],
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 type: 'asset/resource',
+                generator: {
+                    filename: 'fonts/[contenthash][ext]',
+                },
             },
         ],
     },
@@ -55,7 +61,9 @@ module.exports = {
                 }
             ],
         }),
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename: '[contenthash].css',
+        }),
     ],
     optimization: {
         minimizer: [
