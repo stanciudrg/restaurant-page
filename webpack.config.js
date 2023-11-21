@@ -62,34 +62,32 @@ module.exports = {
             '...',
             new CssMinimizerPlugin(),
             new ImageMinimizerPlugin({
-                minimizer: {
-                    implementation: ImageMinimizerPlugin.imageminMinify,
-                    options: {
-                        plugins: [
-                            ['optipng', { optimizationLevel: 5 }],
-                            ['svgo', {
+                minimizer: [
+                    {
+                        implementation: ImageMinimizerPlugin.svgoMinify,
+                        options: {
+                            encodeOptions: {
+                                multipass: true,
                                 plugins: [
-                                    {
-                                        name: 'preset-default',
-                                        params: {
-                                            overrides: {
-                                                removeViewBox: false,
-                                                addAttributesToSVGElement: {
-                                                    params: {
-                                                        attributes: [
-                                                            { xmlns: "http://www.w3.org/2000/svg" },
-                                                        ],
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
+                                    "preset-default",
                                 ],
-                            }],
-                        ],
+                            },
+                        },
                     },
-                },
-            })
+                    {
+                        implementation: ImageMinimizerPlugin.sharpMinify,
+                        options: {
+                            encodeOptions: {
+                                png: {
+                                    effort: 10,
+                                    compressionLevel: 9,
+                                    quality: 10,
+                                },
+                            },
+                        },
+                    }
+                ],
+            }),
         ],
     },
 };
