@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackInjectPreload = require('@principalstudio/html-webpack-inject-preload');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
@@ -41,6 +42,18 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: 'src/index.html',
+        }),
+        new HtmlWebpackInjectPreload({
+            files: [
+                {
+                    match: /.*\.ttf$/,
+                    attributes: { as: 'font', type: 'font/ttf', crossorigin: true },
+                },
+                {
+                    match: /.*\.svg$/,
+                    attributes: { as: 'image' },
+                }
+            ],
         }),
         new MiniCssExtractPlugin(),
     ],
