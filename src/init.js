@@ -46,16 +46,19 @@ export default function init() {
 
     const github = document.createElement('a');
     github.setAttribute('href', 'https://github.com/stanciudrg');
+    github.setAttribute('target', '_blank');
     github.innerHTML = githubSVG;
     links.appendChild(github);
 
     const codepen = document.createElement('a');
     codepen.setAttribute('href', 'https://codepen.io/stanciudrg');
+    codepen.setAttribute('target', '_blank');
     codepen.innerHTML = codepenSVG;
     links.appendChild(codepen);
 
     const linkedin = document.createElement('a');
     linkedin.setAttribute('href', 'www.linkedin.com/in/stanciu-dragos-4186ab186');
+    linkedin.setAttribute('target', '_blank');
     linkedin.innerHTML = linkedinSVG;
     links.appendChild(linkedin);
 
