@@ -97,7 +97,7 @@ export default function loadContactPage() {
     const textArea = document.createElement('textarea');
     textArea.id = 'message';
     textArea.setAttribute('name', 'message');
-    textArea.setAttribute('cols', '25');
+    textArea.setAttribute('cols', '35');
     textArea.setAttribute('rows', '10');
     textArea.setAttribute('placeholder', 'How can we help?');
 
