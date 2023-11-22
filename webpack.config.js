@@ -52,12 +52,16 @@ module.exports = {
         new HtmlWebpackInjectPreload({
             files: [
                 {
-                    match: /.*\.ttf$/,
-                    attributes: { as: 'font', type: 'font/ttf', crossorigin: true },
+                    match: /.*\.woff2$/,
+                    attributes: { as: 'font', type: 'font/woff2', crossorigin: true },
                 },
                 {
                     match: /.*\.svg$/,
                     attributes: { as: 'image' },
+                },
+                {
+                    match: /.*\.png$/,
+                    attributes: { rel: 'prefetch', as: 'image' },
                 }
             ],
         }),
