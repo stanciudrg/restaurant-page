@@ -1,4 +1,5 @@
 import heroSVG from '../img/hero.svg';
+import loadMenuPage from './menu.js';
 
 export default function loadHomePage() {
 
@@ -30,7 +31,8 @@ export default function loadHomePage() {
     paragraph.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quos expedita necessitatibus sequi veniam reprehenderit numquam saepe voluptatibus maxime itaque!'
 
     const button = document.createElement('button');
-    button.textContent = 'Order at home';
+    button.addEventListener('click', loadMenuPage);
+    button.textContent = 'Check our menu';
 
     info.appendChild(title);
     info.appendChild(paragraph);

@@ -45,6 +45,7 @@ h2 {
 }
 
 button {
+    line-height: normal;
     appearance: none;
     cursor: pointer;
     box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);

@@ -8,6 +8,6 @@ import loadMenuPage from './components/menu.js';
 init();
 loadHomePage();
 
-document.querySelector('.home').addEventListener('click', loadHomePage)
-document.querySelector('.contact').addEventListener('click', loadContactPage)
-document.querySelector('.menu').addEventListener('click', loadMenuPage)
+document.querySelector('.home').addEventListener('click', loadHomePage);
+document.querySelector('.contact').addEventListener('click', loadContactPage);
+document.querySelector('.menu').addEventListener('click', loadMenuPage);
