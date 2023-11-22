@@ -1,60 +1,75 @@
-import heroSVG from '../img/hero.svg';
+import toggle from './toggler';
 import loadMenuPage from './menu.js';
+import heroSVG from '../img/hero.svg';
 
 export default function loadHomePage() {
 
     document.querySelector('.home').classList.add('selected');
-    document.querySelector('.contact').classList.remove('selected');
-    document.querySelector('.menu').classList.remove('selected');
+    const contact = document.querySelector('.contact');
+    const menu = document.querySelector('.menu');
+
+    toggle(contact);
+    toggle(menu);
 
     const main = document.querySelector('main');
-    main.innerHTML = '';
+    main.style.opacity = '0';
+    setTimeout(() => {
 
-    const homeContainer = document.createElement('div');
-    homeContainer.classList.add('home-container');
+        main.innerHTML = '';
 
-    const info = document.createElement('info');
-    info.classList.add('info');
+        const homeContainer = document.createElement('div');
+        homeContainer.classList.add('home-container');
 
-    const title = document.createElement('h1');
+        const info = document.createElement('info');
+        info.classList.add('info');
 
-    const titleFirst = document.createElement('span');
-    titleFirst.textContent = 'Salad';
+        const title = document.createElement('h1');
 
-    const titleSecond = document.createElement('span');
-    titleSecond.textContent = 'Pack';
+        const titleFirst = document.createElement('span');
+        titleFirst.textContent = 'Salad';
 
-    title.appendChild(titleFirst);
-    title.appendChild(titleSecond);
+        const titleSecond = document.createElement('span');
+        titleSecond.textContent = 'Pack';
 
-    const paragraphOne = document.createElement('p');
-    paragraphOne.textContent = 'Your top spot for healthy salads'
-    const paragraphTwo = document.createElement('p');
-    paragraphTwo.textContent = 'Explore our selection of fresh greens, carefully picked ingredients, and delicious dressings.';
+        title.appendChild(titleFirst);
+        title.appendChild(titleSecond);
 
-    const button = document.createElement('button');
-    button.addEventListener('click', loadMenuPage);
-    button.textContent = 'Check our menu';
+        const paragraphOne = document.createElement('p');
+        paragraphOne.textContent = 'Your top spot for healthy salads'
+        const paragraphTwo = document.createElement('p');
+        paragraphTwo.textContent = 'Explore our selection of fresh greens, carefully picked ingredients, and delicious dressings.';
 
-    info.appendChild(title);
-    info.appendChild(paragraphOne);
-    info.appendChild(paragraphTwo);
-    info.appendChild(button);
+        const button = document.createElement('button');
+        button.addEventListener('click', loadMenuPage);
+        button.textContent = 'Check our menu';
 
-    const hero = document.createElement('div');
-    hero.classList.add('hero');
+        info.appendChild(title);
+        info.appendChild(paragraphOne);
+        info.appendChild(paragraphTwo);
+        info.appendChild(button);
 
-    const heroLogo = new Image();
-    heroLogo.src = heroSVG;
-    heroLogo.setAttribute('alt', 'SaladPack Hero Image');
-    heroLogo.setAttribute('width', '550');
-    heroLogo.setAttribute('height', '450');
+        const hero = document.createElement('div');
+        hero.classList.add('hero');
 
-    hero.appendChild(heroLogo);
+        const heroLogo = new Image();
+        heroLogo.src = heroSVG;
+        heroLogo.setAttribute('alt', 'SaladPack Hero Image');
+        heroLogo.setAttribute('width', '550');
+        heroLogo.setAttribute('height', '450');
 
-    homeContainer.appendChild(info);
-    homeContainer.appendChild(hero);
+        hero.appendChild(heroLogo);
 
-    main.appendChild(homeContainer);
+        homeContainer.appendChild(info);
+        homeContainer.appendChild(hero);
+
+        main.appendChild(homeContainer);
+
+    }, 500)
+
+    setTimeout(() => {
+        main.style.opacity = '1';
+        toggle(contact);
+        toggle(menu);
+    }, 500)
 
 }

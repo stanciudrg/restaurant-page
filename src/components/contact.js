@@ -1,125 +1,143 @@
+import toggle from './toggler';
+
 export default function loadContactPage() {
 
-    document.querySelector('.home').classList.remove('selected');
     document.querySelector('.contact').classList.add('selected');
-    document.querySelector('.menu').classList.remove('selected');
+    const home = document.querySelector('.home');
+    const menu = document.querySelector('.menu');
+
+    toggle(home);
+    toggle(menu);
 
     const main = document.querySelector('main');
-    main.innerHTML = '';
+    main.style.opacity = '0';
+    setTimeout(() => {
 
-    const contactContainer = document.createElement('div');
-    contactContainer.classList.add('contact-container');
+        main.innerHTML = '';
 
-    const details = document.createElement('div');
-    details.classList.add('details');
+        const contactContainer = document.createElement('div');
+        contactContainer.classList.add('contact-container');
 
-    const phone = document.createElement('div');
-    phone.classList.add('phone-number');
+        const details = document.createElement('div');
+        details.classList.add('details');
 
-    const phoneTitle = document.createElement('h2');
-    phoneTitle.textContent = 'Phone number';
+        const phone = document.createElement('div');
+        phone.classList.add('phone-number');
 
-    const phoneNumber = document.createElement('a');
-    phoneNumber.setAttribute('href', 'tel:5555555555');
-    phoneNumber.textContent = '(555) 555-5555';
+        const phoneTitle = document.createElement('h2');
+        phoneTitle.textContent = 'Phone number';
 
-    phone.appendChild(phoneTitle);
-    phone.appendChild(phoneNumber);
+        const phoneNumber = document.createElement('a');
+        phoneNumber.setAttribute('href', 'tel:5555555555');
+        phoneNumber.textContent = '(555) 555-5555';
 
-    const email = document.createElement('div');
-    email.classList.add('email');
+        phone.appendChild(phoneTitle);
+        phone.appendChild(phoneNumber);
 
-    const emailTitle = document.createElement('h2');
-    emailTitle.textContent = 'Email address';
+        const email = document.createElement('div');
+        email.classList.add('email');
 
-    const emailAddress = document.createElement('a');
-    emailAddress.setAttribute('href', 'malito:saladpackwebsite@gmail.com');
-    emailAddress.textContent = 'saladpackwebsite@gmail.com';
+        const emailTitle = document.createElement('h2');
+        emailTitle.textContent = 'Email address';
 
-    email.appendChild(emailTitle)
-    email.appendChild(emailAddress);
+        const emailAddress = document.createElement('a');
+        emailAddress.setAttribute('href', 'malito:saladpackwebsite@gmail.com');
+        emailAddress.textContent = 'saladpackwebsite@gmail.com';
 
-    const address = document.createElement('div');
-    address.classList.add('address');
+        email.appendChild(emailTitle)
+        email.appendChild(emailAddress);
 
-    const addressTitle = document.createElement('h2');
-    addressTitle.textContent = 'Location';
+        const address = document.createElement('div');
+        address.classList.add('address');
 
-    const addressValue = document.createElement('p');
-    addressValue.textContent = '4811 Belair Rd, Baltimore, Maryland';
+        const addressTitle = document.createElement('h2');
+        addressTitle.textContent = 'Location';
 
-    address.appendChild(addressTitle);
-    address.appendChild(addressValue);
+        const addressValue = document.createElement('p');
+        addressValue.textContent = '4811 Belair Rd, Baltimore, Maryland';
 
-    const schedule = document.createElement('div');
-    schedule.classList.add('opening-hours');
+        address.appendChild(addressTitle);
+        address.appendChild(addressValue);
 
-    const scheduleTitle = document.createElement('h2');
-    scheduleTitle.textContent = 'Opening hours';
+        const schedule = document.createElement('div');
+        schedule.classList.add('opening-hours');
 
-    const scheduleHours = document.createElement('p');
-    scheduleHours.textContent = '10AM - 8PM';
+        const scheduleTitle = document.createElement('h2');
+        scheduleTitle.textContent = 'Opening hours';
 
-    schedule.appendChild(scheduleTitle);
-    schedule.appendChild(scheduleHours);
+        const scheduleHours = document.createElement('p');
+        scheduleHours.textContent = '10AM - 8PM';
 
-    details.appendChild(phone);
-    details.appendChild(email);
-    details.appendChild(address);
-    details.appendChild(schedule);
+        schedule.appendChild(scheduleTitle);
+        schedule.appendChild(scheduleHours);
 
-    const contact = document.createElement('div');
-    contact.classList.add('contact-us');
+        details.appendChild(phone);
+        details.appendChild(email);
+        details.appendChild(address);
+        details.appendChild(schedule);
 
-    const contactTitle = document.createElement('h2');
-    contactTitle.textContent = 'Send us a message';
+        const contact = document.createElement('div');
+        contact.classList.add('contact-us');
 
-    const form = document.createElement('form');
+        const contactTitle = document.createElement('h2');
+        contactTitle.textContent = 'Send us a message';
 
-    const legend = document.createElement('legend');
-    legend.textContent = 'Message form';
+        const form = document.createElement('form');
 
-    const fieldset = document.createElement('fieldset');
+        const legend = document.createElement('legend');
+        legend.textContent = 'Message form';
 
-    const emailLabel = document.createElement('label');
-    emailLabel.setAttribute('for', 'email');
-    emailLabel.textContent = 'Email address';
+        const fieldset = document.createElement('fieldset');
 
-    const input = document.createElement('input');
-    input.id = 'email';
-    input.setAttribute('type', 'text');
-    input.setAttribute('name', 'email');
-    input.setAttribute('placeholder', 'Email address');
+        const emailLabel = document.createElement('label');
+        emailLabel.setAttribute('for', 'email');
+        emailLabel.textContent = 'Email address';
 
-    const messageLabel = document.createElement('label');
-    messageLabel.setAttribute('for', 'message');
+        const input = document.createElement('input');
+        input.id = 'email';
+        input.setAttribute('type', 'text');
+        input.setAttribute('name', 'email');
+        input.setAttribute('placeholder', 'Email address');
 
-    const textArea = document.createElement('textarea');
-    textArea.id = 'message';
-    textArea.setAttribute('name', 'message');
-    textArea.setAttribute('cols', '35');
-    textArea.setAttribute('rows', '10');
-    textArea.setAttribute('placeholder', 'How can we help?');
+        const messageLabel = document.createElement('label');
+        messageLabel.setAttribute('for', 'message');
 
-    const button = document.createElement('button');
-    button.textContent = 'Send';
-    button.addEventListener('click', (e) => e.preventDefault());
+        const textArea = document.createElement('textarea');
+        textArea.id = 'message';
+        textArea.setAttribute('name', 'message');
+        textArea.setAttribute('cols', '35');
+        textArea.setAttribute('rows', '10');
+        textArea.setAttribute('placeholder', 'How can we help?');
 
-    fieldset.appendChild(emailLabel);
-    fieldset.appendChild(input);
-    fieldset.appendChild(messageLabel);
-    fieldset.appendChild(textArea);
-    fieldset.appendChild(button);
+        const button = document.createElement('button');
+        button.textContent = 'Send';
+        button.addEventListener('click', (e) => e.preventDefault());
 
-    form.appendChild(legend);
-    form.appendChild(fieldset);
+        fieldset.appendChild(emailLabel);
+        fieldset.appendChild(input);
+        fieldset.appendChild(messageLabel);
+        fieldset.appendChild(textArea);
+        fieldset.appendChild(button);
 
-    contact.appendChild(contactTitle);
-    contact.appendChild(form);
+        form.appendChild(legend);
+        form.appendChild(fieldset);
 
-    contactContainer.appendChild(details);
-    contactContainer.appendChild(contact);
+        contact.appendChild(contactTitle);
+        contact.appendChild(form);
 
-    main.appendChild(contactContainer);
+        contactContainer.appendChild(details);
+        contactContainer.appendChild(contact);
+
+        main.appendChild(contactContainer);
+
+    }, 500)
+
+    setTimeout(() => {
+        main.style.opacity = '1';
+        main.style.transform = 'scale(1)';
+        toggle(home);
+        toggle(menu);
+    }, 500)
+
 
 }

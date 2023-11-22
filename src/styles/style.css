@@ -36,6 +36,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: var(--font-color);
+    overflow: hidden;
 }
 
 h2 {
@@ -57,7 +58,7 @@ footer a {
     font-size: 1.1rem;
     color: var(--font-color);
     border: 0;
-    transition: 0.2s transform;
+    transition: 0.25s transform, 0.25s background-color;
 }
 
 @media (hover: hover) {
@@ -124,6 +125,7 @@ header li:last-of-type button {
 main {
     width: 100%;
     max-width: 1300px;
+    transition: 0.25s opacity;
 }
 
 .home-container,
