@@ -27,15 +27,18 @@ export default function loadHomePage() {
     title.appendChild(titleFirst);
     title.appendChild(titleSecond);
 
-    const paragraph = document.createElement('p');
-    paragraph.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quos expedita necessitatibus sequi veniam reprehenderit numquam saepe voluptatibus maxime itaque!'
+    const paragraphOne = document.createElement('p');
+    paragraphOne.textContent = 'Your top spot for healthy salads'
+    const paragraphTwo = document.createElement('p');
+    paragraphTwo.textContent = 'Explore our selection of fresh greens, carefully picked ingredients, and delicious dressings.';
 
     const button = document.createElement('button');
     button.addEventListener('click', loadMenuPage);
     button.textContent = 'Check our menu';
 
     info.appendChild(title);
-    info.appendChild(paragraph);
+    info.appendChild(paragraphOne);
+    info.appendChild(paragraphTwo);
     info.appendChild(button);
 
     const hero = document.createElement('div');
