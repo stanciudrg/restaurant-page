@@ -116,7 +116,7 @@ export default function loadContactPage() {
         textArea.setAttribute('rows', '10');
         textArea.setAttribute('placeholder', 'How can we help?');
 
-        // Disable the default behavior of the 'Send' button, which tries to submit the form.
+        // Disable the default behavior of the 'Send' button, disabling form submission.
         const button = document.createElement('button');
         button.textContent = 'Send';
         button.addEventListener('click', (e) => e.preventDefault());

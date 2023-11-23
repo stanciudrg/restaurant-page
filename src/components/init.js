@@ -6,7 +6,7 @@ export default function init() {
 
     const content = document.querySelector('#content');
 
-    // Header
+    // Header section
 
     const header = document.createElement('header');
     const nav = document.createElement('nav');
@@ -18,8 +18,7 @@ export default function init() {
         const button = document.createElement('button');
         button.classList.add(name);
         button.textContent = name;
-        li.appendChild(button);
-        ul.appendChild(li);
+        ul.appendChild(li).appendChild(button);
 
         if (name == 'home') { button.classList.add('selected') }
 
@@ -29,11 +28,13 @@ export default function init() {
     liCreator('contact');
     liCreator('menu');
 
-    nav.appendChild(ul);
-    header.appendChild(nav);
-    content.appendChild(header);
+    content.appendChild(header).appendChild(nav).appendChild(ul);
+
+    // Main section, starts empty. It is being filled with content by the other modules
 
     const main = document.createElement('main');
+
+    // Footer section
 
     const footer = document.createElement('footer');
 
@@ -56,7 +57,7 @@ export default function init() {
     links.appendChild(codepen);
 
     const linkedin = document.createElement('a');
-    linkedin.setAttribute('href', 'www.linkedin.com/in/stanciu-dragos-4186ab186');
+    linkedin.setAttribute('href', 'https://linkedin.com/in/stanciu-dragos-4186ab186');
     linkedin.setAttribute('target', '_blank');
     linkedin.innerHTML = linkedinSVG;
     links.appendChild(linkedin);

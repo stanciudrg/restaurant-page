@@ -23,6 +23,7 @@
 }
 
 * {
+    box-sizing: border-box;
     font-family: 'Poppins', system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     --font-color: #303030;
     --background-color: #d6d6be;
@@ -36,6 +37,7 @@ created and replaced on demand by home.js, contact.js and menu.js modules.
 
 #content {
     min-height: 100vh;
+    min-width: 320px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -97,20 +99,11 @@ header button {
     padding: 1rem 1.5rem;
 }
 
-header li:first-of-type button {
+.home {
+    background: linear-gradient(to left, #d6d6be, #b8b8a3);
     border-top-left-radius: 100px;
     border-bottom-left-radius: 100px;
     padding-left: 30px;
-}
-
-header li:last-of-type button {
-    border-top-right-radius: 100px;
-    border-bottom-right-radius: 100px;
-    padding-right: 30px;
-}
-
-.home {
-    background: linear-gradient(to left, #d6d6be, #b8b8a3);
 }
 
 .home.selected {
@@ -127,6 +120,9 @@ header li:last-of-type button {
 
 .menu {
     background: linear-gradient(to right, #d6d6be, #b8b8a3);
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    padding-right: 30px;
 }
 
 .menu.selected {
@@ -315,7 +311,7 @@ fieldset button {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
     list-style-type: none;
-    padding: 2rem;
+    padding: 1rem 2rem;
     margin-right: 1rem;
     gap: 2rem;
     scrollbar-color: var(--primary-color) rgba(255, 255, 255, 0.2);
@@ -518,10 +514,48 @@ footer p {
 
 }
 
-@media (max-width: 450px) {
-
-    .contact-us {
+@media (max-width: 400px) {
+    textarea {
         width: 100%;
+    }
+
+    .menu-list {
+        padding: 1rem;
+    }
+
+    footer {
+        text-align: center;
+    }
+}
+
+@media (max-width: 370px) {
+
+    .home {
+        padding-left: 25px;
+        padding-right: 1rem;
+    }
+
+    .contact {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .menu {
+        padding-left: 1rem;
+        padding-right: 25px;
+    }
+
+    .menu-list {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+
+    .menu-list img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .item-info {
+        font-size: 14px;
     }
 
 }
