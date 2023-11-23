@@ -2,15 +2,22 @@ import toggle from './toggler';
 
 export default function loadContactPage() {
 
+    // Add the .selected class to the button being clicked.
     document.querySelector('.contact').classList.add('selected');
     const home = document.querySelector('.home');
     const menu = document.querySelector('.menu');
 
+    // Remove the selected class from the other two buttons and disable user interaction
+    // with said buttons.
     toggle(home);
     toggle(menu);
 
+    // Get the main section and set it's opacity to 0, triggering the 0.25s transition between value 1 and 0;
     const main = document.querySelector('main');
     main.style.opacity = '0';
+
+    // After 0.5s, when the main section is fully invisible, replace all it's current content with
+    // the Contact page's content
     setTimeout(() => {
 
         main.innerHTML = '';
@@ -109,6 +116,7 @@ export default function loadContactPage() {
         textArea.setAttribute('rows', '10');
         textArea.setAttribute('placeholder', 'How can we help?');
 
+        // Disable the default behavior of the 'Send' button, which tries to submit the form.
         const button = document.createElement('button');
         button.textContent = 'Send';
         button.addEventListener('click', (e) => e.preventDefault());
@@ -132,6 +140,9 @@ export default function loadContactPage() {
 
     }, 500)
 
+    // After 0.5s, when the main section contains the Home page's content,
+    // make it visible again and re-allow user interaction with the other two 
+    // navigation buttons
     setTimeout(() => {
         main.style.opacity = '1';
         main.style.transform = 'scale(1)';

@@ -8,15 +8,22 @@ import tunaPNG from '../img/tuna.png';
 
 export default function loadMenuPage() {
 
+    // Add the .selected class to the button being clicked.
     document.querySelector('.menu').classList.add('selected');
     const home = document.querySelector('.home');
     const contact = document.querySelector('.contact');
 
+    // Remove the selected class from the other two buttons and disable user interaction
+    // with said buttons.
     toggle(home);
     toggle(contact);
 
+    // Get the main section and set it's opacity to 0, triggering the 0.25s transition between value 1 and 0;
     const main = document.querySelector('main');
     main.style.opacity = '0';
+
+    // After 0.5s, when the main section is fully invisible, replace all it's current content with
+    // the Home page's content
     setTimeout(() => {
         main.innerHTML = '';
 
@@ -86,6 +93,9 @@ export default function loadMenuPage() {
 
                 case 'chicken':
 
+                    // The Chicken Salad is different from other menu items since it has a discount.
+                    // In order to show the discount, two spans are created, one containing the old price,
+                    // and the other containing the new price.
                     png.setAttribute('alt', 'Chicken Salad');
                     itemPrice.textContent = '';
 
@@ -116,6 +126,9 @@ export default function loadMenuPage() {
 
     }, 500)
 
+    // After 0.5s, when the main section contains the Home page's content,
+    // make it visible again and re-allow user interaction with the other two 
+    // navigation buttons
     setTimeout(() => {
         main.style.opacity = '1';
         main.style.transform = 'scale(1)';

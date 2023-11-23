@@ -29,6 +29,11 @@
     --primary-color: #99d055;
 }
 
+/* Main container of the application. It contains the header and 
+footer sections created by init.js module and the main section
+created and replaced on demand by home.js, contact.js and menu.js modules.
+*/
+
 #content {
     min-height: 100vh;
     display: flex;
@@ -38,6 +43,8 @@
     background-color: var(--font-color);
     overflow: hidden;
 }
+
+/* General declarations */
 
 h2 {
     font-size: 1.1rem;
@@ -61,6 +68,8 @@ footer a {
     transition: 0.25s transform, 0.25s background-color;
 }
 
+/* Apply hover effects on desktop only */
+
 @media (hover: hover) {
 
     button:hover,
@@ -69,6 +78,8 @@ footer a {
     }
 
 }
+
+/* Header section */
 
 header ul {
     display: flex;
@@ -122,11 +133,16 @@ header li:last-of-type button {
     background: linear-gradient(to right, #99d055, #7BB342);
 }
 
+/* Main section */
+
 main {
     width: 100%;
     max-width: 1300px;
     transition: 0.25s opacity;
 }
+
+/* Home, contact, and menu containers. They are created and appended into 
+the main section with JavaScript by their respective modules */
 
 .home-container,
 .contact-container {
@@ -148,7 +164,7 @@ main {
     padding: 4rem 0;
 }
 
-/* Home */
+/* Home page */
 
 .info {
     flex: 1 1 0;
@@ -192,11 +208,14 @@ main {
     width: 100%;
 }
 
-/* Contact */
+/* Contact page */
 
 h2 {
     margin-top: 0;
 }
+
+/* Details section of Contact's page. It contains information about
+the phone number, email, address, and opening hours */
 
 .details {
     display: flex;
@@ -219,6 +238,9 @@ h2 {
     color: var(--background-color);
 }
 
+/* The Contact us section of Contact's page. It contains a form that
+allows for the user to send a message to the business using their email address */
+
 fieldset {
     appearance: none;
     display: flex;
@@ -227,6 +249,9 @@ fieldset {
     padding: 0;
     border: 0;
 }
+
+/* Hide the label and legend text from view while allowing for assistive technologies
+to still read the information back to the user */
 
 label,
 legend {
@@ -278,11 +303,14 @@ fieldset button {
     align-self: center;
 }
 
-/* Menu */
+/* Menu page */
+
+/* The menu list, it contains 6 menu items. Each menu item has an image, name, number of calories, and price.
+*/
 
 .menu-list {
     overflow-y: auto;
-    max-height: 425px;
+    max-height: 460px;
     max-width: 1300px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
@@ -317,8 +345,19 @@ fieldset button {
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 0;
+    border-radius: 500px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+    padding: 8px;
     margin: 0;
+}
+
+.menu-list li:hover,
+.menu-list li:focus-visible {
+    box-shadow: 0px 0px 20px 0px rgba(152, 208, 83, 0.3);
+}
+
+.menu-list li:focus {
+    outline: none;
 }
 
 .menu-list img {
@@ -351,26 +390,7 @@ fieldset button {
     color: var(--primary-color);
 }
 
-
-.menu-list li::before {
-    content: "";
-    position: absolute;
-    width: calc(100% + 16px);
-    height: calc(100% + 16px);
-    border-radius: 500px;
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
-    left: -8px;
-    top: -8px;
-}
-
-.menu-list li:hover::before,
-.menu-list li:focus-visible::before {
-    box-shadow: 0px 0px 20px 0px rgba(152, 208, 83, 0.3);
-}
-
-.menu-list li:focus {
-    outline: none;
-}
+/* A "Best seller" label added to the Caesar salad using ::after */
 
 .caesar::after {
     content: "Best seller";
@@ -383,11 +403,17 @@ fieldset button {
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
 }
 
+/* A strike-through effect and a different color is being added to the price
+of the Chicken salad, which is the only element that has two spans containing two different prices,
+hence the span:first-of-type selector. */
+
 .item-price span:first-of-type {
     text-decoration: line-through;
     color: var(--background-color);
     margin-right: 12px;
 }
+
+/* Footer section */
 
 footer {
     padding: 0 1rem 1rem 1rem;
@@ -397,6 +423,8 @@ footer p {
     color: var(--background-color);
     margin: 0 0 1rem 0;
 }
+
+/* Author links */
 
 .links {
     display: flex;
@@ -421,6 +449,8 @@ footer p {
     width: 30px;
     height: 30px;
 }
+
+/* Media queries for responsive design. */
 
 @media (max-width: 1100px) {
 
