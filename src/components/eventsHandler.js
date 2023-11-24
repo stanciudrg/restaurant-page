@@ -16,10 +16,11 @@ export function attachDefaultEvents() {
 
 export function attachEvent(element, target) {
 
-    console.log(getPages())
-
     // A function which is used when different elements (other than
     // the navigational buttons located in header) must send the user to a page
+    // If the page does not exist, do not add an event listener to prevent
+    // the console from throwing errors.
+    if (getPages()[target] == undefined) { return };
     element.addEventListener('click', () => loadPage(getPages()[target]));
 
 }
